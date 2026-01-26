@@ -1,5 +1,6 @@
 # Disclaimer #
 This software is for EDUCATIONAL PURPOSES ONLY!!!! Please support the official release of Crossover.
+
 Please use this software at your own risk. I have tested it on 2 Macs and appears to fully function on both of them, so it should work, but still.
 
 # What this contains #
