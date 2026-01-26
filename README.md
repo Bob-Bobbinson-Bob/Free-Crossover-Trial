@@ -24,4 +24,4 @@ This is a bit more complex to set up, but still isn't THAT hard, it just takes m
 
 To do this:
 1. Download the python file and the plist file from the releases tab.
-2. Put the python file in the /Users/yourusername/Free Crossover/ directory.
+2. Put the python file in the /Users/yourusername/Free Crossover/ directory (if the 'Free Crossover' folder doesnt exist then create it).
