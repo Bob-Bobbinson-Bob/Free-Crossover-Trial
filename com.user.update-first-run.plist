@@ -9,7 +9,7 @@
     <array>
         <string>/bin/sh</string>
         <string>-c</string>
-        <string>/usr/bin/python3 "/Users/username/Free Crossover/update_first_run.py"</string>
+        <string>/usr/bin/python3 "/Users/yourusername/Free Crossover/update_first_run.py"</string>
     </array>
 
     <key>RunAtLoad</key>
