@@ -35,7 +35,7 @@ To do this:
 1. Download the Python file and the plist file from the releases tab.
 2. Put the Python file in the '/Users/yourusername/Free Crossover' directory (if the 'Free Crossover' folder doesn't exist then create it). We are done with the Python file now.
 3. Open the plist file with a text editor (NOT a prefs editor).
-4. On line 12 of the plist file replace 'yourusername' with your actual username.
+4. On line 11 of the plist file replace 'yourusername' with your actual username.
 5. Save this and close the text editor.
 6. In order to make this run on startup, move this to the '/Users/yourusername/Library/LaunchAgents' directory. NOTE: The Library may not be visible in Finder. In order to access it, either press Cmd+Shift+. to show all hidden files OR on the menu bar, select 'Go' then hold down the option key to show the Library directory, which can be entered.
 
