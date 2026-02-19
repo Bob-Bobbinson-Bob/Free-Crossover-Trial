@@ -53,7 +53,7 @@ To do this:
    launchctl load ~/Library/LaunchAgents/com.user.update-first-run.plist
    
    ```
-NOTE: If you ever edit your plist file, use either command c or d ONCE to load it:
+   NOTE: If you ever edit your plist file, use either command c or d ONCE to load it:
 
    c (macOS 10.15 or newer):
 
@@ -72,6 +72,5 @@ NOTE: If you ever edit your plist file, use either command c or d ONCE to load i
 
    
    ```
-
 
 Now whenever you reboot your Mac your CrossOver trial SHOULD be reset.
