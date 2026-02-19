@@ -38,7 +38,8 @@ To do this:
 4. On line 11 of the plist file replace 'yourusername' with your actual username.
 5. Save this and close the text editor.
 6. Move this to the '/Users/yourusername/Library/LaunchAgents' directory. NOTE: The Library may not be visible in Finder. In order to access it, either press Cmd+Shift+. to show all hidden files OR on the menu bar, select 'Go' then hold down the option key to show the Library directory, which can be entered.
-7. Now run either command a or b (you do not need to run them both this just activates the plist)
+7. Now run either command a or b (you do not need to run them both this just activates the plist).
+
    a:
 
    ```zsh
