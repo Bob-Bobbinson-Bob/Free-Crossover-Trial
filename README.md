@@ -54,6 +54,8 @@ To do this:
    
    ```
 
+Now whenever you reboot your Mac your CrossOver trial SHOULD be reset.
+
 NOTE: If you ever edit your plist file, use either command ONCE to load it:
 
    a (macOS 10.15 or newer):
@@ -73,5 +75,3 @@ NOTE: If you ever edit your plist file, use either command ONCE to load it:
 
    
    ```
-
-Now whenever you reboot your Mac your CrossOver trial SHOULD be reset.
