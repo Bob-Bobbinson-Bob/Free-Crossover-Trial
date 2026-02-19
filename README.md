@@ -47,7 +47,7 @@ To do this:
    
    ```
    
-   b (macOS 10.4 – 10.12, though still works on newer macs):
+   b (macOS 10.4 – 10.12, though still works on newer Macs):
 
    ```zsh
    launchctl load ~/Library/LaunchAgents/com.user.update-first-run.plist
