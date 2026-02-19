@@ -39,12 +39,18 @@ To do this:
 5. Save this and close the text editor.
 6. Move this to the '/Users/yourusername/Library/LaunchAgents' directory. NOTE: The Library may not be visible in Finder. In order to access it, either press Cmd+Shift+. to show all hidden files OR on the menu bar, select 'Go' then hold down the option key to show the Library directory, which can be entered.
 7. Now run either command a or b (you do not need to run them both this just activates the plist)
-   a: '''zsh
+   a:
+
+   ```zsh
    launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.user.update-first-run.plist
-   '''
    
-   b: '''zsh
+   ```
+   
+   b:
+
+   ```zsh
    launchctl load ~/Library/LaunchAgents/com.user.update-first-run.plist
-   '''
+   
+   ```
 
 Now whenever you reboot your Mac your CrossOver trial SHOULD be reset.
