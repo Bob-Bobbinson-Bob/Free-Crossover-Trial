@@ -56,22 +56,22 @@ To do this:
 
 NOTE: If you ever edit your plist file, use either command ONCE to load it:
 
-   a (macOS 10.15 or newer):
-
-   ```zsh
-   launchctl bootout gui/$(id -u) ~/Library/LaunchAgents/com.user.update-first-run.plist 2>/dev/null
-   launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.user.update-first-run.plist
-
+      a (macOS 10.15 or newer):
    
-   ```
+      ```zsh
+      launchctl bootout gui/$(id -u) ~/Library/LaunchAgents/com.user.update-first-run.plist 2>/dev/null
+      launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.user.update-first-run.plist
    
-   b (macOS 10.4 – 10.12, though still works on newer macs):
-
-   ```zsh
-   launchctl unload ~/Library/LaunchAgents/com.user.update-first-run.plist
-   launchctl load ~/Library/LaunchAgents/com.user.update-first-run.plist
-
+      
+      ```
+      
+      b (macOS 10.4 – 10.12, though still works on newer macs):
    
-   ```
+      ```zsh
+      launchctl unload ~/Library/LaunchAgents/com.user.update-first-run.plist
+      launchctl load ~/Library/LaunchAgents/com.user.update-first-run.plist
+   
+      
+      ```
 
 Now whenever you reboot your Mac your CrossOver trial SHOULD be reset.
