@@ -54,7 +54,7 @@ To do this:
    
    ```
 
-   NOTE: If you ever edit your plist file, use either command ONCE to load it:
+NOTE: If you ever edit your plist file, use either command ONCE to load it:
 
    a (macOS 10.15 or newer):
 
