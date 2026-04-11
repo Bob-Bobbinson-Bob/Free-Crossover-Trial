@@ -4,6 +4,8 @@ This software is for EDUCATIONAL PURPOSES ONLY!!!! Please support Codeweavers by
 
 Please use this software at your own risk. I have tested it on 2 Macs and it appears to fully function on both of them, so it should work, but still.
 
+Also, this is my first proper published repo, so sorry if it is annoying to set this up. Feel free to make an installer for this to make it easier to set up, and also feel free to upload the installer somewhere.
+
 # What this contains
 
 This contains a Python file that allows you to use CrossOver for free by renewing your CrossOver trial, and a plist file that can be set up to run whenever you boot up your Mac, renewing your license whenever you turn it on. No malicious code or anything bad!
