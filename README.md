@@ -12,6 +12,10 @@ This contains a Python file that allows you to use CrossOver for free by renewin
 
 If you want to run this command whenever your Mac starts up, then scroll down to the 'Running on Startup' section, else go to the 'Simple Usage' section.
 
+# What you will need
+
+Your Mac with Crossover and also Python 3.
+
 # Simple Usage
 
 Run this Python file to renew your CrossOver trial.
