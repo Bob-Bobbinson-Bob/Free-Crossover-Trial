@@ -96,19 +96,19 @@ while true; do
     echo "  3) Cancel"
     echo
 
-    read -r -p "Choose an option [1-3]: " choice
+    read -r -p "Choose an option [1-3]: " choice < /dev/tty
 
     case "$choice" in
         1)
             install
             echo
-            read -r -p "Press Enter to return to the menu..."
+            read -r -p "Press Enter to return to the menu..." < /dev/tty
             ;;
         2)
             if is_installed; then
                 uninstall
                 echo
-                read -r -p "Press Enter to return to the menu..."
+                read -r -p "Press Enter to return to the menu..." < /dev/tty
             else
                 echo
                 echo -e "${GRAY}Uninstall is unavailable because Free Crossover is not installed.${RESET}"
