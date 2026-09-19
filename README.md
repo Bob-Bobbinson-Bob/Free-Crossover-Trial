@@ -21,7 +21,7 @@ Your Mac with Crossover and also Python 3.
 If you just wanna set this up easily with it working on every mac restart then run this command: 
 
 ```zsh
-curl -fsSL https://raw.githubusercontent.com/Bob-Bobbinson-Bob/Free-Crossover-Trial/main/install.sh -o /tmp/free-crossover-install.sh && bash /tmp/free-crossover-install.sh; rm -f /tmp/free-crossover-install.sh
+bash <(curl -fsSL https://raw.githubusercontent.com/Bob-Bobbinson-Bob/Free-Crossover-Trial/main/install.sh)
 ```
 
 Then it should be reset and will always be reset whenever you turn your mac on.
