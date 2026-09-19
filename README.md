@@ -8,7 +8,7 @@ Also, this is my first proper published repo, so sorry if it is annoying to set 
 
 # What this contains
 
-This contains a Python file that allows you to use CrossOver for free by renewing your CrossOver trial, and a plist file that can be set up to run whenever you boot up your Mac, renewing your license whenever you turn it on. No malicious code or anything bad!
+This contains a, installer to get this all setup easily and quickly, a Python file that allows you to use CrossOver for free by renewing your CrossOver trial, and a plist file that can be set up to run whenever you boot up your Mac, renewing your license whenever you turn it on. No malicious code or anything bad!
 
 If you want to run this command whenever your Mac starts up, then just do the 'EZ setup'. If you wanna do this setup manually for some reason then scroll down to the 'Manual setup section', then choose what you want to do from there on out.
 
