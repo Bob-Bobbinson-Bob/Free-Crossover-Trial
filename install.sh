@@ -4,24 +4,35 @@ set -e
 
 REPO="https://raw.githubusercontent.com/Bob-Bobbinson-Bob/Free-Crossover-Trial/main"
 
-mkdir -p "$HOME/Free Crossover"
-mkdir -p "$HOME/Library/LaunchAgents"
+APP_DIR="$HOME/Free Crossover"
+PLIST_DIR="$HOME/Library/LaunchAgents"
+PLIST="$PLIST_DIR/com.user.update-first-run.plist"
 
+echo "Installing Free Crossover..."
+
+mkdir -p "$APP_DIR"
+mkdir -p "$PLIST_DIR"
+
+echo "Downloading Python script..."
 curl -fsSL "$REPO/update_first_run.py" \
-    -o "$HOME/Free Crossover/update_first_run.py"
+    -o "$APP_DIR/update_first_run.py"
 
+echo "Downloading LaunchAgent..."
 curl -fsSL "$REPO/com.user.update-first-run.plist" \
-    -o "$HOME/Library/LaunchAgents/com.user.update-first-run.plist"
+    -o "$PLIST"
 
-sed -i '' "s|/Users/yourusername|$HOME|g" \
-    "$HOME/Library/LaunchAgents/com.user.update-first-run.plist"
+echo "Configuring username..."
+sed -i '' "s|/Users/yourusername|$HOME|g" "$PLIST"
 
-plutil -lint "$HOME/Library/LaunchAgents/com.user.update-first-run.plist"
+echo "Checking plist..."
+plutil -lint "$PLIST"
 
-launchctl bootout gui/$(id -u) \
-    "$HOME/Library/LaunchAgents/com.user.update-first-run.plist" 2>/dev/null || true
+echo "Loading LaunchAgent..."
+launchctl bootout "gui/$(id -u)" "$PLIST" 2>/dev/null || true
+launchctl bootstrap "gui/$(id -u)" "$PLIST"
 
-launchctl bootstrap gui/$(id -u) \
-    "$HOME/Library/LaunchAgents/com.user.update-first-run.plist"
+echo "Running update script..."
+python3 "$APP_DIR/update_first_run.py"
 
-echo "Free Crossover startup setup complete."
+echo
+echo "Free Crossover has been installed and started."
