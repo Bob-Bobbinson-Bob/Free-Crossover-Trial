@@ -16,15 +16,15 @@ If you want to run this command whenever your Mac starts up, then just do the 'E
 
 Your Mac with Crossover and also Python 3.
 
-# EZ setup
+# EZ setup (Recommended)
 
 If you just wanna set this up easily with it working on every mac restart then run this command: 
 
 ```zsh
 bash <(curl -fsSL https://raw.githubusercontent.com/Bob-Bobbinson-Bob/Free-Crossover-Trial/main/install.sh)
 ```
-
-Then it should be reset and will always be reset whenever you turn your mac on.
+Then go through the install process. If you have any trouble later on, you can uninstall it by running the script again and going through the uninstall process.
+Then it should be reset and will always be reset whenever you turn your mac on. There's no need to do anything else :)
 
 # Manual setup
 
