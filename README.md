@@ -24,6 +24,7 @@ If you just wanna set this up easily with it working on every mac restart then r
 bash <(curl -fsSL https://raw.githubusercontent.com/Bob-Bobbinson-Bob/Free-Crossover-Trial/main/install.sh)
 ```
 Then go through the install process. If you have any trouble later on, you can uninstall it by running the script again and going through the uninstall process.
+This script simply sets up the plist and python files in their respective directories, makes sure that the plist files runs on every mac startup, and also runs the python file so you can immediately see a change to Crossover without having to restart. Without this installer you needing to do the manual process. There is no malicious code being run by the installer or any other files (you can even check, this IS open source after all :) ).
 Then it should be reset and will always be reset whenever you turn your mac on. There's no need to do anything else :)
 
 # Manual setup
