@@ -44,11 +44,11 @@ python3 path/to/update_first_run.py
 
 ```
 
-Your CrossOver trial should now be reset.
+Your CrossOver trial should now be reset. However, you will need to run the python file to reset it every time rather than it resetting with every MacOS bootup.
 
 ## Running on Startup
 
-This is a bit more complex to set up, but still isn't THAT hard, it just takes more time.
+This is a bit more complex to set up, but still isn't THAT hard, it just takes more time. This makes it so that the Crossover trial resets whenever you turn your mac on.
 
 To do this:
 
