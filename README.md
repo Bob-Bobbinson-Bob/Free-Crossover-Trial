@@ -16,7 +16,7 @@ If you want to run this command whenever your Mac starts up, then scroll down to
 
 Your Mac with Crossover and also Python 3.
 
-# Simple Usage
+## Simple Usage
 
 Run this Python file to renew your CrossOver trial.
 
@@ -32,7 +32,7 @@ python3 path/to/update_first_run.py
 
 Your CrossOver trial should now be reset.
 
-# Running on Startup
+## Running on Startup
 
 This is a bit more complex to set up, but still isn't THAT hard, it just takes more time.
 
