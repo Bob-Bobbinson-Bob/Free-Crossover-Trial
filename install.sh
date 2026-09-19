@@ -18,7 +18,7 @@ GREEN='\033[32m'
 RESET='\033[0m'
 
 is_installed() {
-    launchctl print "$DOMAIN/$LABEL" >/dev/null 2>&1
+    [ -f "$SCRIPT" ] || [ -f "$PLIST" ] || launchctl print "$DOMAIN/$LABEL" >/dev/null 2>&1
 }
 
 install() {
@@ -45,7 +45,7 @@ install() {
     launchctl bootout "$DOMAIN" "$PLIST" 2>/dev/null || true
     launchctl bootstrap "$DOMAIN" "$PLIST"
 
-    if ! is_installed; then
+    if ! launchctl print "$DOMAIN/$LABEL" >/dev/null 2>&1; then
         echo
         echo -e "${RED}Installation failed: LaunchAgent was not loaded.${RESET}"
         return 1
