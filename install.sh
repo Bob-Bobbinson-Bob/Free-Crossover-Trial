@@ -5,14 +5,16 @@ set -e
 REPO="https://raw.githubusercontent.com/Bob-Bobbinson-Bob/Free-Crossover-Trial/main"
 
 APP_DIR="$HOME/Free Crossover"
-PLIST="$HOME/Library/LaunchAgents/com.user.update-first-run.plist"
+PLIST_DIR="$HOME/Library/LaunchAgents"
+PLIST="$PLIST_DIR/com.user.update-first-run.plist"
 SCRIPT="$APP_DIR/update_first_run.py"
+
 LABEL="com.user.update-first-run"
 DOMAIN="gui/$(id -u)"
 
-GREEN='\033[32m'
-RED='\033[31m'
 GRAY='\033[90m'
+RED='\033[31m'
+GREEN='\033[32m'
 RESET='\033[0m'
 
 is_installed() {
@@ -25,15 +27,13 @@ install() {
     echo
 
     mkdir -p "$APP_DIR"
-    mkdir -p "$HOME/Library/LaunchAgents"
+    mkdir -p "$PLIST_DIR"
 
     echo "Downloading update_first_run.py..."
-    curl -fsSL "$REPO/update_first_run.py" \
-        -o "$SCRIPT"
+    curl -fsSL "$REPO/update_first_run.py" -o "$SCRIPT"
 
     echo "Downloading LaunchAgent..."
-    curl -fsSL "$REPO/com.user.update-first-run.plist" \
-        -o "$PLIST"
+    curl -fsSL "$REPO/com.user.update-first-run.plist" -o "$PLIST"
 
     echo "Configuring username..."
     sed -i '' "s|/Users/yourusername|$HOME|g" "$PLIST"
@@ -45,11 +45,10 @@ install() {
     launchctl bootout "$DOMAIN" "$PLIST" 2>/dev/null || true
     launchctl bootstrap "$DOMAIN" "$PLIST"
 
-    echo "Checking installation..."
     if ! is_installed; then
         echo
         echo -e "${RED}Installation failed: LaunchAgent was not loaded.${RESET}"
-        exit 1
+        return 1
     fi
 
     echo "Running update script..."
@@ -96,19 +95,19 @@ while true; do
     echo "  3) Cancel"
     echo
 
-    read -r -p "Choose an option [1-3]: " choice < /dev/tty
+    read -r -p "Choose an option [1-3]: " choice
 
     case "$choice" in
         1)
             install
             echo
-            read -r -p "Press Enter to return to the menu..." < /dev/tty
+            read -r -p "Press Enter to return to the menu..."
             ;;
         2)
             if is_installed; then
                 uninstall
                 echo
-                read -r -p "Press Enter to return to the menu..." < /dev/tty
+                read -r -p "Press Enter to return to the menu..."
             else
                 echo
                 echo -e "${GRAY}Uninstall is unavailable because Free Crossover is not installed.${RESET}"
