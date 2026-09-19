@@ -8,6 +8,16 @@ APP_DIR="$HOME/Free Crossover"
 PLIST="$HOME/Library/LaunchAgents/com.user.update-first-run.plist"
 SCRIPT="$APP_DIR/update_first_run.py"
 LABEL="com.user.update-first-run"
+DOMAIN="gui/$(id -u)"
+
+GREEN='\033[32m'
+RED='\033[31m'
+GRAY='\033[90m'
+RESET='\033[0m'
+
+is_installed() {
+    launchctl print "$DOMAIN/$LABEL" >/dev/null 2>&1
+}
 
 install() {
     echo
@@ -32,14 +42,21 @@ install() {
     plutil -lint "$PLIST"
 
     echo "Loading LaunchAgent..."
-    launchctl bootout "gui/$(id -u)" "$PLIST" 2>/dev/null || true
-    launchctl bootstrap "gui/$(id -u)" "$PLIST"
+    launchctl bootout "$DOMAIN" "$PLIST" 2>/dev/null || true
+    launchctl bootstrap "$DOMAIN" "$PLIST"
+
+    echo "Checking installation..."
+    if ! is_installed; then
+        echo
+        echo -e "${RED}Installation failed: LaunchAgent was not loaded.${RESET}"
+        exit 1
+    fi
 
     echo "Running update script..."
     python3 "$SCRIPT"
 
     echo
-    echo "Installation complete."
+    echo -e "${GREEN}Installation complete.${RESET}"
 }
 
 uninstall() {
@@ -48,26 +65,35 @@ uninstall() {
     echo
 
     echo "Stopping LaunchAgent..."
-    launchctl bootout "gui/$(id -u)" "$PLIST" 2>/dev/null || true
+    launchctl bootout "$DOMAIN/$LABEL" 2>/dev/null || true
 
     echo "Removing files..."
     rm -f "$PLIST"
     rm -f "$SCRIPT"
 
-    if [ -d "$APP_DIR" ]; then
-        rmdir "$APP_DIR" 2>/dev/null || true
-    fi
+    rmdir "$APP_DIR" 2>/dev/null || true
 
     echo
-    echo "Uninstallation complete."
+    echo -e "${GREEN}Uninstallation complete.${RESET}"
 }
 
-if [ -f "$PLIST" ] || [ -f "$SCRIPT" ]; then
-    echo "Free Crossover is already installed."
+while true; do
+    clear
+
+    echo "================================"
+    echo "       Free Crossover"
+    echo "================================"
     echo
-    echo "1) Reinstall"
-    echo "2) Uninstall"
-    echo "3) Cancel"
+
+    echo "  1) Install / Reinstall"
+
+    if is_installed; then
+        echo -e "  2) ${RED}Uninstall${RESET}"
+    else
+        echo -e "  2) ${GRAY}Uninstall${RESET}"
+    fi
+
+    echo "  3) Cancel"
     echo
 
     read -r -p "Choose an option [1-3]: " choice
@@ -75,18 +101,28 @@ if [ -f "$PLIST" ] || [ -f "$SCRIPT" ]; then
     case "$choice" in
         1)
             install
+            echo
+            read -r -p "Press Enter to return to the menu..."
             ;;
         2)
-            uninstall
+            if is_installed; then
+                uninstall
+                echo
+                read -r -p "Press Enter to return to the menu..."
+            else
+                echo
+                echo -e "${GRAY}Uninstall is unavailable because Free Crossover is not installed.${RESET}"
+                sleep 2
+            fi
             ;;
         3)
-            echo "Cancelled."
+            clear
+            exit 0
             ;;
         *)
-            echo "Invalid choice."
-            exit 1
+            echo
+            echo "Invalid option."
+            sleep 1
             ;;
     esac
-else
-    install
-fi
+done
