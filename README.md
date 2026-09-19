@@ -39,7 +39,7 @@ This is a bit more complex to set up, but still isn't THAT hard, it just takes m
 To do this:
 
 1. Download the Python file and the plist file from the releases tab.
-2. Put the Python file in the '/Users/yourusername/Free Crossover' directory (if any folder like the 'Free Crossover' folder doesn't exist then create it). We are done with the Python file now.
+2. Put the Python file in the '/Users/yourusername/Free Crossover' directory (Obviously replacing 'yourusername' with the name of your username folder) (if any folder like the 'Free Crossover' folder doesn't exist then create it). We are done with the Python file now.
 3. Open the plist file with a text editor (NOT a prefs editor).
 4. On line 11 of the plist file replace 'yourusername' with your actual mac username.
 5. Save this and close the text editor.
