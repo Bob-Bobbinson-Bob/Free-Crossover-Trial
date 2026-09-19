@@ -24,6 +24,8 @@ If you just wanna set this up easily with it working on every mac restart then r
 curl -fsSL https://raw.githubusercontent.com/Bob-Bobbinson-Bob/Free-Crossover-Trial/main/install.sh | bash
 ```
 
+Then it should be reset and will always be reset whenever you turn your mac on.
+
 # Manual setup
 
 For some reason if you wanna set up the files yourself then here are the ways to do it there are 2 methods to do this.
