@@ -92,7 +92,7 @@ while true; do
         echo -e "  2) ${GRAY}Uninstall${RESET}"
     fi
 
-    echo "  3) Cancel"
+    echo "  3) Exit to Terminal"
     echo
 
     read -r -p "Choose an option [1-3]: " choice
@@ -111,7 +111,8 @@ while true; do
             else
                 echo
                 echo -e "${GRAY}Uninstall is unavailable because Free Crossover is not installed.${RESET}"
-                sleep 2
+                echo
+                read -r -p "Press Enter to return to the menu..."
             fi
             ;;
         3)
@@ -121,7 +122,8 @@ while true; do
         *)
             echo
             echo "Invalid option."
-            sleep 1
+            echo
+            read -r -p "Press Enter to return to the menu..."
             ;;
     esac
 done
