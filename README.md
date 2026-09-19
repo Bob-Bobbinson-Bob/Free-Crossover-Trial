@@ -10,11 +10,23 @@ Also, this is my first proper published repo, so sorry if it is annoying to set 
 
 This contains a Python file that allows you to use CrossOver for free by renewing your CrossOver trial, and a plist file that can be set up to run whenever you boot up your Mac, renewing your license whenever you turn it on. No malicious code or anything bad!
 
-If you want to run this command whenever your Mac starts up, then scroll down to the 'Running on Startup' section, else go to the 'Simple Usage' section.
+If you want to run this command whenever your Mac starts up, then just do the 'EZ setup'. If you wanna do this setup manually for some reason then scroll down to the 'Manual setup section', then choose what you want to do from there on out.
 
 # What you will need
 
 Your Mac with Crossover and also Python 3.
+
+# EZ setup
+
+If you just wanna set this up easily with it working on every mac restart then run this command: 
+
+```zsh
+curl -fsSL https://raw.githubusercontent.com/Bob-Bobbinson-Bob/Free-Crossover-Trial/main/install.sh | bash
+```
+
+# Manual setup
+
+For some reason if you wanna set up the files yourself then here are the ways to do it there are 2 methods to do this.
 
 ## Simple Usage
 
