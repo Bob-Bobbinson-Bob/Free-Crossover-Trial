@@ -84,7 +84,7 @@ while true; do
     echo "================================"
     echo
 
-    echo "  1) Install / Reinstall"
+    echo "  1) Install / Reinstall (Also runs trial reset script)"
 
     if is_installed; then
         echo -e "  2) ${RED}Uninstall${RESET}"
